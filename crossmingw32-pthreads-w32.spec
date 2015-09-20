@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	Implementacja komponentu POSIX Threads dla Win32 - wersja skr
 Name:		crossmingw32-pthreads-w32
 Version:	2.9.1
 %define	dver	%(echo %{version} | tr . -)
-Release:	1
+Release:	2
 License:	LGPL v2.1
 Group:		Development/Libraries
 Source0:	ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-%{dver}-release.tar.gz
