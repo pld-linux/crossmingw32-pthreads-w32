@@ -3,11 +3,12 @@ Summary(pl.UTF-8):	Implementacja komponentu POSIX Threads dla Win32 - wersja skr
 Name:		crossmingw32-pthreads-w32
 Version:	2.9.1
 %define	dver	%(echo %{version} | tr . -)
-Release:	2
+Release:	3
 License:	LGPL v2.1
 Group:		Development/Libraries
 Source0:	ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-%{dver}-release.tar.gz
 # Source0-md5:	36ba827d6aa0fa9f9ae740a35626e2e3
+Patch0:		%{name}-timespec.patch
 URL:		http://www.sourceware.org/pthreads-win32/
 BuildRequires:	crossmingw32-gcc
 BuildRequires:	sed >= 4.0
@@ -82,6 +83,7 @@ POSIX Threads - biblioteka DLL dla Windows.
 
 %prep
 %setup -q -n pthreads-w32-%{dver}-release
+%patch0 -p1
 
 mkdir lib
 

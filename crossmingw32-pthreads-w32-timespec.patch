@@ -1,0 +1,11 @@
+--- pthreads-w32-2-9-1-release/pthread.h.orig	2012-05-27 06:16:45.000000000 +0200
++++ pthreads-w32-2-9-1-release/pthread.h	2018-12-09 12:42:13.610057177 +0100
+@@ -315,7 +315,7 @@
+ 
+ #if !defined(HAVE_STRUCT_TIMESPEC)
+ #define HAVE_STRUCT_TIMESPEC
+-#if !defined(_TIMESPEC_DEFINED)
++#if !defined(_TIMESPEC_DEFINED) && !defined(__struct_timespec_defined)
+ #define _TIMESPEC_DEFINED
+ struct timespec {
+         time_t tv_sec;
