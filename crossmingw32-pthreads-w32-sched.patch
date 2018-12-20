@@ -1,0 +1,13 @@
+--- pthreads-w32-2-9-1-release/sched.h.orig	2011-06-29 07:10:02.000000000 +0200
++++ pthreads-w32-2-9-1-release/sched.h	2018-12-20 18:00:33.452320552 +0100
+@@ -117,9 +117,9 @@
+ #endif /* PTW32_SCHED_LEVEL >= PTW32_SCHED_LEVEL_MAX */
+ 
+ #if (defined(__MINGW64__) || defined(__MINGW32__)) || defined(_UWIN)
+-# if PTW32_SCHED_LEVEL >= PTW32_SCHED_LEVEL_MAX
+ /* For pid_t */
+ #  include <sys/types.h>
++# if PTW32_SCHED_LEVEL >= PTW32_SCHED_LEVEL_MAX
+ /* Required by Unix 98 */
+ #  include <time.h>
+ # else
