@@ -2,11 +2,12 @@ Summary:	POSIX Threads component implementation for Win32 - MinGW32 cross versio
 Summary(pl.UTF-8):	Implementacja komponentu POSIX Threads dla Win32 - wersja skrośna dla MinGW32
 Name:		crossmingw32-pthreads-w32
 Version:	2.11.0
-Release:	1
+Release:	2
 License:	LGPL v2.1
 Group:		Development/Libraries
 Source0:	https://downloads.sourceforge.net/pthreads4w/pthreads4w-code-v%{version}.zip
 # Source0-md5:	75c3ade4fa6aeff1d1d25d33f6bbce12
+Patch0:		pthreads4w-winsock.patch
 URL:		https://sourceforge.net/p/pthreads4w/wiki/Home/
 BuildRequires:	crossmingw32-gcc
 BuildRequires:	crossmingw32-runtime >= 1:5.4.2-2
@@ -83,6 +84,7 @@ POSIX Threads - biblioteka DLL dla Windows.
 
 %prep
 %setup -q -n pthreads4w-code-9808f0b151e6c6efe2d57f3b54a1fb9a19d1eb88
+%patch0 -p1
 
 mkdir lib
 

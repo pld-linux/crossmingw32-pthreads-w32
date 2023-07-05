@@ -1,0 +1,13 @@
+Avoid <winsock.h> as it conflicts with <winsock2.h>; <winerror.h> is enough here
+
+--- pthreads4w-code-9808f0b151e6c6efe2d57f3b54a1fb9a19d1eb88/_ptw32.h.orig	2018-08-08 12:49:00.000000000 +0200
++++ pthreads4w-code-9808f0b151e6c6efe2d57f3b54a1fb9a19d1eb88/_ptw32.h	2023-07-05 20:16:58.381825453 +0200
+@@ -165,7 +165,7 @@
+    * note: ETIMEDOUT is no longer defined in winsock.h
+    * WSAETIMEDOUT is so use its value.
+    */
+-#  include <winsock.h>
++#  include <winerror.h>
+ #  if defined(WSAETIMEDOUT)
+ #    define ETIMEDOUT WSAETIMEDOUT
+ #  else
